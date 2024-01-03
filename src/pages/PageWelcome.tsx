@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+const backendUrl = "http://localhost:4882";
 
 export const PageWelcome = () => {
-	const backendUrl = "http://localhost:4882";
 	const [appMessage, setAppMessage] = useState("");
 	const [appName, setAppName] = useState("");
 
