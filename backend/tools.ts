@@ -18,3 +18,8 @@ export const getAllFilesInDirectory = (
 
 	return filesArray;
 };
+
+export const searchForFile = (directoryPath: string, file: string) => {
+	const files = getAllFilesInDirectory(directoryPath);
+	return files.includes(file);
+};

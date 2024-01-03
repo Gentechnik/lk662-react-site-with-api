@@ -8,6 +8,7 @@ export const PageWelcome = () => {
 	const [nodeVersion, setNodeVersion] = useState("");
 	const [numberOfFiles, setNumberOfFiles] = useState(0);
 	const [userSystem, setUserSystem] = useState("");
+	const [file, setFile] = useState([]);
 
 	const fetchAppName = async () => {
 		try {
@@ -47,6 +48,13 @@ export const PageWelcome = () => {
 		})();
 	}, []);
 
+	useEffect(() => {
+		(async () => {
+			const response = await axios.get(`${backendUrl}/`);
+			setFile(response.data);
+		})();
+	}, []);
+
 	return (
 		<>
 			<h2>{appMessage}</h2>
@@ -56,6 +64,8 @@ export const PageWelcome = () => {
 					<p>NOVE VERSION: {nodeVersion}</p>
 					<p>NUMBER OF FILES: {numberOfFiles}</p>
 					<p>USER SYSTEM: {userSystem}</p>
+					<input type="text" className="file" />
+					<ul></ul>
 				</>
 			)}
 		</>
