@@ -1,3 +1,3 @@
 export const getAppName = () => {
-	return "et662-react-site-with-api";
+	return "lk662-react-site-with-api";
 };
